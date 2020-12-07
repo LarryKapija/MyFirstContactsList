@@ -5,8 +5,12 @@ You can see the evidence in the "Evidence" folder.
 ---------------------------------------------------
 ##This App support: ##
 
-*Create and edit contacts.
-*The contacts will be saved in the phone.
-*Allows add a profile photo.
-*Allows calls and SMS messages.
-*Allow add contacts by scan a QR Code.
+1. Create and edit contacts.
+
+1. The contacts will be saved in the phone.
+
+1. Allows add a profile photo.
+
+1. Allows calls and SMS messages.
+
+1. Allow add contacts by scan a QR Code.
