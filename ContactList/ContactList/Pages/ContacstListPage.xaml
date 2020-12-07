@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:avatar="clr-namespace:ContactList.Views"
+             x:Class="ContactList.Pages.ContacstListPage"
+             x:Name="ContactsPage">
+
+
+    <Grid Padding="15" ColumnDefinitions="*,*,*,*">
+        <ListView x:Name="listView" Grid.ColumnSpan="4" ItemsSource="{Binding Contact}" SelectedItem="{Binding SelectedContact}" SelectionMode="Single" IsPullToRefreshEnabled="True" IsRefreshing="{Binding BindingContext.IsRefreshing, Source={x:Reference ContactsPage}}" CachingStrategy="RecycleElement">
+            <ListView.Header>
+                <!-- <Grid ColumnDefinitions="*,*,Auto,Auto" Padding="10">-->
+                <StackLayout Orientation="Horizontal">
+                    <SearchBar x:Name="SearchBar" Grid.Row="1" Grid.ColumnSpan="2" Placeholder="Buscar contactos" TextChanged="SearchBar_TextChanged" />
+                </StackLayout>
+
+                <!-- </Grid>-->
+            </ListView.Header>
+
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell >
+
+                        <ViewCell.View>
+
+
+                            <Frame Margin="0" Padding="0" CornerRadius="15">
+                                <StackLayout Orientation="Horizontal">
+                                    <Frame Style="{StaticResource ImageRounded}" >
+                                        <Image x:Name="ProfilePhoto"  Aspect="AspectFill"   Source="{Binding ProfilePhoto}" />
+                                    </Frame>
+                                  
+                                    <StackLayout>
+                                        <Label  Text="{Binding Name}" FontAttributes="Bold"/>
+                                        <Label Text="{Binding PhoneNumber}"/>
+                                    </StackLayout>
+                                </StackLayout>
+                            </Frame>
+
+                        </ViewCell.View>
+
+                        <ViewCell.ContextActions>
+                            <MenuItem Text="Delete" IsDestructive="True"
+                                      Command="{Binding BindingContext.DeleteContactCommand, Source={x:Reference ContactsPage}}" 
+                                      CommandParameter="{Binding . }"/>
+                        </ViewCell.ContextActions>
+                    </ViewCell>
+
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <ImageButton Source="PlusButton" Grid.Column="3"  Command="{Binding AddContactCommand}" Style="{StaticResource RoundedImageButton}"  >
+            
+        </ImageButton>
+    </Grid>
+</ContentPage>

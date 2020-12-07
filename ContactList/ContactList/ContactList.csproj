@@ -11,17 +11,43 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Xamarin.Forms" Version="4.8.0.1451" />
-    <PackageReference Include="Xamarin.Essentials" Version="1.5.3.2" />
+    <PackageReference Include="Patget.ZXing.Net.Mobile.Forms" Version="99.0.2" />
+    <PackageReference Include="Rg.Plugins.Popup" Version="2.0.0.7" />
+    <PackageReference Include="SkiaSharp" Version="2.80.2" />
+    <PackageReference Include="sqlite-net-pcl" Version="1.7.335" />
+    <PackageReference Include="Xam.Plugin.Media" Version="5.0.1" />
+    <PackageReference Include="Xamarin.Essentials" Version="1.6.0-pre4" />
+    <PackageReference Include="Xamarin.Forms" Version="4.8.0.1687" />
+    <PackageReference Include="ZXing.Net.Mobile.Forms" Version="2.4.1" />
   </ItemGroup>
+	
+	<PropertyGroup>
+		<LangVersion>preview</LangVersion>
+	</PropertyGroup>
+	
+	<ItemGroup>
+	  <Reference Include="System.Drawing.Common">
+	    <HintPath>..\..\..\..\..\..\..\..\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\ReferenceAssemblies\Microsoft\Framework\Xamarin.iOS\v1.0\Facades\System.Drawing.Common.dll</HintPath>
+	  </Reference>
+	</ItemGroup>
+	
+	<ItemGroup>
+	  <Compile Update="Pages\ContacstListPage.xaml.cs">
+	    <DependentUpon>ContacstListPage.xaml</DependentUpon>
+	  </Compile>
+	</ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Models\" />
-    <Folder Include="ViewModels\" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <EmbeddedResource Update="Views\ContactListPage.xaml">
+    <EmbeddedResource Update="Pages\AddContactFormPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Pages\ContacstListPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Pages\ContactProfilePage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\SMSView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>

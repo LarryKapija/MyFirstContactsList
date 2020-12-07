@@ -1,16 +1,30 @@
-﻿using System;
+﻿using ContactList.Pages;
+using Todo;
 using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
 
 namespace ContactList
 {
     public partial class App : Application
     {
+
+        static ContactListDataBase database;
         public App()
         {
             InitializeComponent();
 
-            MainPage = new MainPage();
+            MainPage = new ContacstListPage();
+        }
+
+        public static ContactListDataBase Database
+        {
+            get
+            {
+                if (database == null)
+                {
+                    database = new ContactListDataBase();
+                }
+                return database;
+            }
         }
 
         protected override void OnStart()

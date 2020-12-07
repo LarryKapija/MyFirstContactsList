@@ -3,6 +3,36 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ContactList.App">
     <Application.Resources>
+        
+        <ResourceDictionary>
+
+            <Style TargetType="Frame" x:Key="ImageRounded">
+                <Setter Property="CornerRadius" Value="100"/>
+                <Setter Property="Margin" Value="0"/>
+                <Setter Property="Padding" Value="0" />
+                <Setter Property="BackgroundColor" Value="Transparent"/>
+            </Style>
+
+            <Style TargetType="ImageButton" x:Key="RoundedImageButton">
+                <Setter Property="VerticalOptions" Value="End" />
+                <Setter Property="CornerRadius" Value="40" />
+                <Setter Property="WidthRequest" Value="70"/>
+                <Setter Property="HeightRequest" Value="70" />
+                <Setter Property="BackgroundColor" Value="#34bbe6" />
+                <Setter Property="HorizontalOptions" Value="Center"/>
+                <Setter Property="VerticalOptions" Value="End"/>
+                <Setter Property="Padding" Value="20"/>
+            </Style>
+
+            <Style TargetType="Frame" x:Key="LargeButton">
+                <Setter Property="Margin" Value="0"/>
+                <Setter Property="Padding" Value="0"/>
+                <Setter Property="HasShadow" Value="True"/>
+                <Setter Property="CornerRadius" Value="30"/>
+                <Setter Property="BackgroundColor" Value="DodgerBlue "/>
+            </Style>
+            
+        </ResourceDictionary>
 
     </Application.Resources>
 </Application>

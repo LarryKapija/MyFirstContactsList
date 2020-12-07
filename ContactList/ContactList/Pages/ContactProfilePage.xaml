@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ContactList.Pages.ContactProfilePage"
+             x:Name="MyPage">
+    <Grid RowDefinitions="10*,40*,10*,15*,15*,50*,13*" ColumnDefinitions="20*,20*,20*,20*,20*" ColumnSpacing="15" RowSpacing="15" Padding="15" >
+
+
+
+        <Frame Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="3"  Style="{StaticResource ImageRounded}" >
+            <Image Source="{Binding ProfilePhoto}" Aspect="AspectFill" ></Image>
+        </Frame>
+        
+        <Label Text="{Binding Name}" Grid.Row="2" Grid.ColumnSpan="3" FontSize="Large"  ></Label>
+        
+
+        <ImageButton Grid.Row="3" Grid.Column="0"  VerticalOptions="CenterAndExpand" HorizontalOptions="Start" Source="CallIcon" BackgroundColor="Transparent" Command="{Binding CallCommand}" />
+        <ImageButton Grid.Row="3" Grid.Column="2"  VerticalOptions="CenterAndExpand" HorizontalOptions="Start" Source="MessageIcon" BackgroundColor="Transparent"  Command="{Binding MessageCommand}"/>
+        <ImageButton Grid.Row="3" Grid.Column="4"  VerticalOptions="CenterAndExpand" HorizontalOptions="Start"  Source="VideoCallIcon" BackgroundColor="Transparent" Command="{Binding VideoCallCommand}"/>
+
+
+
+        <Frame Grid.Row="6" Grid.Column="2" Grid.ColumnSpan="3" Margin="0" Style="{StaticResource LargeButton}" >
+            <StackLayout Orientation="Horizontal" BackgroundColor="DodgerBlue">
+                <Image Source="EditIcon" Scale="0.5" />
+                <Label VerticalOptions="Center"  Text="Editar contacto" FontSize="Medium"  TextColor="White" TextTransform="None" ></Label>
+                <StackLayout.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding EditContactInformation}" />
+                </StackLayout.GestureRecognizers>
+            </StackLayout>
+        </Frame>
+        
+       
+    </Grid>
+</ContentPage>

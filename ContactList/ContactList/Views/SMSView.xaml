@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<pages:PopupPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ContactList.Views.SMSView"
+             xmlns:animations="clr-namespace:Rg.Plugins.Popup.Animations;assembly=Rg.Plugins.Popup"
+             xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup">
+
+    <pages:PopupPage.Animation>
+        <animations:ScaleAnimation DurationIn="400"
+                                   DurationOut="300"
+                                   EasingIn="SinOut"
+                                   EasingOut="SinIn"
+                                   HasBackgroundAnimation="True"
+                                   PositionIn="Center"
+                                   PositionOut="Center"
+                                   ScaleIn="1.2"
+                                   ScaleOut="0.8" />
+    </pages:PopupPage.Animation>
+
+ 
+    <Frame Margin="50,100" CornerRadius="15"
+           Padding="0">
+        <Grid RowDefinitions="*,*,*,Auto" ColumnDefinitions="*,*,*" RowSpacing="10" Padding="30,100">
+
+            
+            <Label Grid.Row="0" Text="Texto:" FontSize="Large"/>
+
+            <Editor x:Name="EntryMessage"
+                   Grid.Row="1"
+                   Grid.RowSpan="2"
+                   Grid.ColumnSpan="3"
+                   FontSize="20"
+                   AutoSize="TextChanges"
+                    Keyboard="Chat"
+                    MinimumHeightRequest="75"
+                    MinimumWidthRequest="75"
+                    BackgroundColor="WhiteSmoke"
+                   MaxLength="150"/>
+
+
+            <Frame  Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="3" Style="{StaticResource LargeButton}">
+                <StackLayout Orientation="Horizontal">
+                    <Image Source="SendIcon" Scale="0.5" />
+                    <Label VerticalOptions="Center"  Text="Enviar" FontSize="30" FontAttributes="Bold" TextColor="White" TextTransform="None" ></Label>
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="Button_Clicked" />
+                    </StackLayout.GestureRecognizers>
+                </StackLayout>
+                
+            </Frame>
+
+
+        </Grid>
+    </Frame>
+
+</pages:PopupPage>

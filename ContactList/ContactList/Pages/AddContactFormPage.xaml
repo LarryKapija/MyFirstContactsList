@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ContactList.Pages.AddContactFormPage">
+
+    <Grid  RowDefinitions="Auto,*,*,*,*,*,*,*,*" ColumnDefinitions="*,*,*,*" Padding="15" RowSpacing="15" ColumnSpacing="15" BackgroundColor="#ECF0F1">
+
+        <Frame Grid.ColumnSpan="4" BackgroundColor="White" CornerRadius="15" />
+
+        <Label Text="Crear Contacto" Grid.ColumnSpan="2" FontSize="Title" VerticalOptions="Center" />
+
+        <ImageButton Source="QrButton"  Grid.Column="2"  BackgroundColor="Transparent" Command="{Binding AddContactByQRCode}" />
+        <ImageButton Source="SaveButton" Grid.Column="3" BackgroundColor="Transparent" Command="{Binding CreateContactCommand}"  />
+
+        <ImageButton Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" Source="AddPhotoButton" Style="{StaticResource RoundedImageButton}"  Command="{Binding AddProfilePhotoCommand}" />
+ 
+        <Entry x:Name="NameEntry"       Grid.Row="2" Grid.ColumnSpan="4" Placeholder="Nombre"  Text="{Binding NameTxt}" ></Entry>
+        <Entry x:Name="LastNameEntry"   Grid.Row="3" Grid.ColumnSpan="4" Placeholder="Apellido" Text="{Binding LastNameTxt}" ></Entry>
+        <Entry x:Name="CompanyEntry"    Grid.Row="4" Grid.ColumnSpan="4" Placeholder="Empresa" Text="{Binding CompanyTxt}"></Entry>
+        <Entry x:Name="PhoneEntry"      Grid.Row="5" Grid.ColumnSpan="4" Placeholder="Telefono" Text="{Binding PhoneNumberTxt}" MaxLength="10" ClearButtonVisibility="WhileEditing" Keyboard="Numeric"></Entry>
+       
+        <Entry x:Name="Emailentry"      Grid.Row="7" Grid.ColumnSpan="4" Placeholder="CorreoElectronico" Text="{Binding EmailTxt}"></Entry>
+       
+    </Grid>
+    
+</ContentPage>
